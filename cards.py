@@ -6,10 +6,17 @@ for key,value in VALUE_CARDS.items():
   
 def create_card(card,suit):
   top = ' _______'
-  rowCard = '|{0}      |'.format(card)
+  
   row = '|       |'.format(card)
   middle = '|   {0}   |'.format(suit)
-  bottom = '|______{0}|'.format(card)
+  
+  if len(card) > 1:
+    rowCard = '|{0}     |'.format(card)
+    bottom = '|_____{0}|'.format(card)
+  else:
+    rowCard = '|{0}      |'.format(card)
+    bottom = '|______{0}|'.format(card)
+    
   card_str = '{0}\n{1}\n{2}\n{3}\n{2}\n{5}'.format(top,rowCard,row,middle,row,bottom)
   return card_str
   
